@@ -1,0 +1,48 @@
+# == Schema Information
+#
+# Table name: observations
+#
+#  id                     :integer          not null, primary key
+#  start_time             :datetime
+#  telescope_name         :integer
+#  binocular_name         :integer
+#  eyepiece_name          :integer
+#  filter_name			  :integer
+#  rating                 :integer
+#  description            :string
+#  image                  :integer
+#  notes                  :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  user_id                :integer          not null
+#  celestial_body_name    :integer
+#  observative_session_id :integer          not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2017-09-17 10:22:16
+  celestial_body_name: Mars
+  telescope_name: MyString
+  binocular_name: MyString
+  eyepiece_name: MyString
+  filter_name: MyString
+  description: MyString
+  rating: 1
+  notes: MyString
+  user_id: 764040363
+  observative_session_id: 980190962
+
+two:
+  start_time: 2017-09-17 10:22:16
+  celestial_body_name: Mars
+  telescope_name: MyString
+  binocular_name: MyString
+  eyepiece_name: MyString
+  filter_name: MyString
+  description: MyString
+  rating: 1
+  notes: MyString
+  user_id: 764040363
+  observative_session_id: 980190962

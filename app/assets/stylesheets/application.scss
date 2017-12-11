@@ -1,0 +1,224 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body {
+	background: #144269;
+}
+ 
+ .container {
+	background-color:#FFFFFF;
+ }
+ 
+ .pl-0 {
+     padding-left: 0 !important;
+ }
+ /******************************************
+ *
+ *            HEADER
+ *
+ ******************************************/
+ .header {
+	background: linear-gradient(#144269, #337ab7);
+	color: #FFFFFF;
+ }
+ 
+ .header h1 {
+    padding: 0.8em 0;
+	font-size: 4em;
+	
+ }
+ 
+#login {
+	padding:7em 0 5.5em 0;
+ }
+ 
+ /****************************************
+ *
+ *            NAVBAR
+ *
+ ****************************************/
+ 
+ .navbar {
+	border:2px solid #2681cf;
+	box-shadow: 4px 4px 2px #AAAAAA;
+ }
+ 
+ nav p {
+	margin-top:15px;
+ }
+ 
+ .navbar-header {
+	height:115px;
+ }
+ 
+.navbar-header .navbar-brand {
+	display:inline-block;
+	height:110px;
+	line-height:4.5em;
+} 
+
+.navbar-nav {
+	height:115px;
+}
+
+.navbar-nav li a {
+	display:inline-block;
+	line-height:5.7em;
+}
+
+.navbar-right li a {
+	line-height:1em;
+}
+
+/**********************************************
+*
+*               FOOTER
+*
+**********************************************/
+
+footer {
+	width:100%;
+	
+}
+
+.footer {
+	background: linear-gradient(#337ab7, #144269);
+	color: #FFFFFF;
+	padding: 0 1.5em;
+	
+}
+
+.footer h1 {
+	font-size: 1.5em;
+}
+
+.footer a {
+	color: #f79227;
+	text-decoration:underline;
+}
+
+.footer a:hover {
+	color: #ff7119;
+}
+
+/**********************************************
+*
+*          CONTENT
+*
+**********************************************/
+
+#observative_sessions {
+	width:80%;
+	display:inline-block;
+}
+
+#outings {
+	width:18%;
+	display:inline-block;
+	float:right;
+}
+
+.print {
+	border-radius: 4px;
+	color: #FFFFFF;
+	background: #337ab7;
+	display: inline-block;
+	padding: 1em;
+	margin-bottom:1.5em;
+}
+
+.print:hover {
+	color: #FFFFFF;
+	background: #2e6da4;
+}
+
+.print:focus {
+	color:#FFFFFF;
+}
+
+
+.expiring {
+	color:#FF0000;
+}
+
+.subscription_expired {
+	font-size:2.5em;
+	background:#FF0000;
+	color: #FFFFFF;
+	padding:0.5em;
+}
+
+.month_expired {
+	padding:1em;
+	font-size:2em;
+	background:#FF0000;
+	color:#FFFFFF;
+	margin-bottom:0.6em;
+}
+
+thead {
+	background:#83c9ff;
+}
+
+tr:nth-child(even) {
+	background:#d9d9d9;
+}
+
+.clear {
+	clear:both;
+}
+
+.report h1 {
+	text-align:center;
+	font-weight: bold;
+	font-size:1.5em;
+}
+
+.report-body {
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+}
+
+.report-body .col-sm-12 {
+	padding:1.5em 0;
+}
+
+.report-body .clear {
+	padding-bottom:1em;
+}
+
+.description {
+	margin-bottom:5em;
+}
+
+@media print {
+
+body {
+	background:#FFFFFF;
+}
+
+#report-page, #report-page-1 {
+	border-top-color:#000000;
+	border-left-color:#000000;
+	border-right-color:#000000;
+	border-bottom-color:transparent;
+}
+
+.panel-default .report {
+	border-color: #000000;
+}
+
+.report-body {
+	border-bottom: 1px solid #000000;
+}
+
+.print {
+	display:none;
+}
+
+footer{
+	display:none;
+}
+
+
+}

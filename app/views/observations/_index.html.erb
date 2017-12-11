@@ -1,0 +1,60 @@
+<%= render 'observations/new_modal' %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+	<h1 class="panel-title">Gestione Osservazioni</h1>
+  </div>
+  <div class="panel-body">
+    <p>Lista osservazioni</p>
+	<p>
+      Azioni disponibili:
+      <span>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-observation-modal">Inserisci nuova osservazione</button>
+      </span>
+    </p>
+    <hr>
+	<%= search_form_for @s, url: observative_session_path(params[:id]) do |f| %>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="order">Ordina risultati per</label>
+            <%= select_tag 'order', options_for_select([['Nessuno','Created_at DESC'], ['Ora', 'start_time'], ['Rating', 'rating']], params[:order] || ''), class: 'form-control', onchange: "$('#observation_search').submit();" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+		<th>Ora inizio</th>
+        <th>Corpo celeste</th>
+        <th>Telescopio</th>
+		<th>Binocolo</th>
+		<th>Osservatore</th>
+        <th colspan="3">Azioni</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @observations.each do |observation| %>
+        <tr>
+		<td>
+		<% if observation.start_time != nil %>
+		  <%= observation.start_time.strftime("%H:%M") %>
+		<% end %>
+		</td>
+		  <td><%= observation.celestial_body_name %></td>
+          <td><%= observation.telescope_name %></td>
+		  <td><%= observation.binocular_name %></td>
+		  <td><%= observation.user.name %></td>
+          <td><%= link_to 'Visualizza', observative_session_observation_path(@observative_session, observation) %></td>
+		  <% if current_user == 'admin' || Date.today < current_user.subscription_expiration+31.days %>
+			<td><%= link_to 'Modifica', edit_observative_session_observation_path(@observative_session, observation) %></td> 
+            <td><%= link_to 'Elimina', observative_session_observation_path(@observative_session, observation), method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+		  <% end %>
+		</tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
